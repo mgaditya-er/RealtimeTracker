@@ -12,7 +12,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
     console.log('connectedd');
+    socket.on('send-location', (data) => {
+        io.emit('receive-location', {id: socket.id, ...data});
+    });
+
     socket.on('disconnect', () => {
+        io.emit('disconnected', {id: socket.id} );
         console.log('disconnected');
     });
 });
@@ -21,6 +26,9 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-server.listen(3000, () => {
-    console.log('Server is running on port 3000');
+const PORT = 3000;
+const HOST = '0.0.0.0';  // This allows the server to listen on all network interfaces
+
+server.listen(PORT, HOST, () => {
+    console.log(`Server is running on http://${HOST}:${PORT}`);
 });
