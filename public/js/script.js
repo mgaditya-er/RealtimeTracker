@@ -33,6 +33,9 @@ socket.on('receive-location', (data) => {
     if(!markers[id])
     {
         markers[id] = L.marker([latitude, longitude]).addTo(map);
+    
+        updateMarkerCount()
+
     }
     markers[id].setLatLng([latitude, longitude]);
 });
@@ -41,4 +44,10 @@ socket.on('disconnected', (data) => {
     const {id} = data;
     map.removeLayer(markers[id]);
     delete markers[id];
+    updateMarkerCount()
 });
+
+function updateMarkerCount() {
+    const markerCount = Object.keys(markers).length;
+    console.log(`Current active markers: ${markerCount}`);
+}
