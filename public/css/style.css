@@ -9,3 +9,7 @@ body{
     width: 100%;
     font-family: 'Roboto', sans-serif;
 }
+#map{
+    height: 100%;
+    width: 100%;
+}
