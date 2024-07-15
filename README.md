@@ -54,7 +54,7 @@ Contributions are welcome! Fork the repository, propose your changes, and submit
 - **Your Name**
 - **LinkedIn:** [Aditya Ghyar](https://www.linkedin.com/in/aditya-ghyar/)
 - **GitHub:** [Aditya Ghyar](https://github.com/mgaditya-er)
-- **Email:** adityamghyar@example.com
+- **Email:** adityamghyar@gmail.com
 
 Feel free to reach out with any questions, feedback, or collaboration opportunities!
 
